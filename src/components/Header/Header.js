@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="header">
             <img src={logo} alt="" />
-            <div className="header-anchor">
+            <div>
                 <a href="./home">Home</a>
                 <a href="./shop">Shop</a>
                 <a href="./review">Review</a>
