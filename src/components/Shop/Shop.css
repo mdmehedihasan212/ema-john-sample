@@ -9,3 +9,7 @@
     margin: 100px 50px;
     gap: 45px;
 }
+.order-summary{
+    background-color: rgba(255, 153, 0, 0.3);
+    font-family: 'Lato';
+}
