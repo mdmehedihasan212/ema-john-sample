@@ -1,5 +1,4 @@
 import React from 'react';
-import Product from '../Product/Product';
 import './OrderSummary.css';
 
 const OrderSummary = ({ cart }) => {
@@ -11,7 +10,7 @@ const OrderSummary = ({ cart }) => {
         shipping = shipping + product.shipping;
     }
     const tax = (total * 0.1).toFixed(2);
-    const grandTotal = (total + shipping + parseFloat(tax).toFixed(2));
+    const grandTotal = total + shipping + parseFloat(tax);
     return (
         <div className="summary-container">
             <h3>Order Summary</h3>
