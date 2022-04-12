@@ -1,19 +1,28 @@
-.header{
-    background-color: #1C2B35;
+.header-container {
+    background-color: rgba(28, 43, 53, 1);
     height: 80px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between;    
-    padding-left: 146px;
-    padding-right: 146px;
+    padding-left: 140px;
+    padding-right: 140px;
 }
-.header a{
+
+.header-container img {
+    width: 140px;
+    height: 40px;
+}
+
+.header-container a {
+    margin-left: 35px;
     color: white;
     text-decoration: none;
-    margin-left: 36px;
-    font-family: 'Lato';
-    font-size: 17px;
 }
-.header a:hover{
+
+.header-container a:hover {
     color: orange;
+}
+
+.custom-link {
+    display: flex;
 }

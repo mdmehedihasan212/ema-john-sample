@@ -1,18 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import logo from '../../images/Logo.svg';
+import CustomLink from '../CustomLink/CustomLink';
 import './Header.css';
 
 const Header = () => {
     return (
-        <div className="header">
-            <img src={logo} alt="" />
+        <div className='header-container'>
             <div>
-                <Link to="/">Home</Link>
-                <Link to="/shop">Shop</Link>
-                <Link to='/order'>Order</Link>
-                <Link to="/review">Review</Link>
-                <Link to="/contact">Contact</Link>
+                <img src={logo} alt="" />
+            </div>
+            <div className='custom-link'>
+                <CustomLink to={'/'}>Home</CustomLink>
+                <CustomLink to={'/shop'}>Shop</CustomLink>
+                <CustomLink to={'/order'}>Order</CustomLink>
+                <CustomLink to={'/review'}>Review</CustomLink>
+                <CustomLink to={'/about'}>About</CustomLink>
             </div>
         </div>
     );

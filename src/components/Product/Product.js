@@ -1,22 +1,34 @@
 import React from 'react';
-import { FaCartArrowDown } from 'react-icons/fa';
 import './Product.css';
+import { MdAddShoppingCart } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
-const Product = ({ product, handleToCart }) => {
-    // console.log(product);
-    const { img, name, price, ratings, seller } = product;
+const Product = ({ product }) => {
+    console.log(product);
+    const { id, img, name, price, seller, ratings } = product;
+
+    const navigate = useNavigate();
+
+    const handleAddToCart = id => {
+        navigate(`/product/${name}`)
+    }
     return (
-        <div className="product">
-            <img src={img} alt="" />
-            <div className="product-info">
-                <p className="product-name">{name}</p>
-                <p>Price: ${price}</p>
-                <p><small>Seller : {seller} star</small></p>
-                <p><small>Ratings : {ratings}</small></p>
+        <div className='product-container'>
+            <div className="ima-container">
+                <img src={img} alt="" />
             </div>
-            <button onClick={() => handleToCart(product)} className="btn-cart">
-                <p className="btn-text">Add to Cart <FaCartArrowDown></FaCartArrowDown></p>
-            </button>
+            <div className="product-details">
+                <p>Name: {name}</p>
+                <p>Price: {price}</p>
+                <p>Manufacturer: {seller}</p>
+                <p>Rating: {ratings}</p>
+            </div>
+            <div className="add-to-cart">
+                <button onClick={() => handleAddToCart(id)}>
+                    <p>Add to Cart <MdAddShoppingCart></MdAddShoppingCart> </p>
+                </button>
+
+            </div>
         </div>
     );
 };

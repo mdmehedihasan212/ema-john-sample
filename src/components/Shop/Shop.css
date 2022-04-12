@@ -1,15 +1,11 @@
-.shop-container{
+.shop-item-container {
     display: grid;
     grid-template-columns: 4fr 1fr;
+    margin: 100px 50px;
 }
-.product-container{
+
+.shop-details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
-    margin: 100px 50px;
-    gap: 45px;
-}
-.order-summary{
-    background-color: rgba(255, 153, 0, 0.3);
-    font-family: 'Lato';
 }

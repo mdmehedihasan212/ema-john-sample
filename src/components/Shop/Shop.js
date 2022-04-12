@@ -1,30 +1,22 @@
-import React, { useState } from 'react';
-import useProduct from '../../hooks/useProduct';
-import OrderSummary from '../OrderSummary/OrderSummary';
-import Product from '../Product/Product';
+import React from 'react';
 import './Shop.css';
+import useProduct from '../../hooks/useProduct';
+import Product from '../Product/Product';
 
 const Shop = () => {
     const [products, setProducts] = useProduct();
-    const [cart, setCart] = useState([]);
-
-    const handleToCart = (product) => {
-        const newCart = [...cart, product]
-        setCart(newCart)
-
-        // console.log(cart);
-        // console.log(newCart);
-
-    }
     return (
-        <div className="shop-container">
-            <div className="product-container">
+        <div className='shop-item-container'>
+            <div className="shop-details">
                 {
-                    products.map(product => <Product key={product.id} product={product} handleToCart={handleToCart}></Product>)
+                    products.map(product => <Product
+                        key={product.id}
+                        product={product}
+                    ></Product>)
                 }
             </div>
-            <div className="order-summary">
-                <OrderSummary cart={cart}></OrderSummary>
+            <div className="order-details">
+                <h1>Details</h1>
             </div>
         </div>
     );
